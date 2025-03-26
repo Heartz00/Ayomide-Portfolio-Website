@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 
 const About = () => {
   const [ref, inView] = useInView({
-    triggerOnce: true,
+    triggerOnce: false, // Changed from true to false
     threshold: 0.3,
   });
 
@@ -41,7 +41,7 @@ const About = () => {
 
       {/* Content Container */}
       <div className="flex flex-wrap items-center justify-center lg:justify-between">
-        {/* Image Section - Reduced height */}
+        {/* Image Section */}
         <motion.div
           variants={imageVariants}
           initial="hidden"
@@ -52,7 +52,7 @@ const About = () => {
             className="rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 w-full max-w-md h-auto object-cover"
             src={aboutImg}
             alt="About Me"
-            style={{ maxHeight: "550px" }} // Adjust this value as needed
+            style={{ maxHeight: "550px" }}
           />
         </motion.div>
 
