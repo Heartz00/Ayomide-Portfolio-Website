@@ -61,8 +61,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.8 }}
               src={profilePic}
               alt="Ayomide Oladele"
-              className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96  object-cover rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
-            />
+            className="w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-full object-cover border-4 border-white-500/20 hover:border-purple-500/40 transition-all duration-300 shadow-lg hover:shadow-xl"            />
           </motion.div>
         </div>
       </div>
