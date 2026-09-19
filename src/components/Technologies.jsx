@@ -59,7 +59,7 @@ const Technologies = () => {
   };
 
   return (
-    <div className="border-b border-neutral-800 pb-24" ref={ref}>
+    <div className="scroll-mt-28 border-b border-neutral-800 pb-24" id="technologies" ref={ref}>
       <h2 className="my-20 text-center text-4xl">Technologies</h2>
 
       <div className="flex flex-wrap items-center justify-center gap-6">

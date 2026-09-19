@@ -28,7 +28,7 @@ const About = () => {
   };
 
   return (
-    <div className="border-b border-neutral-900 pb-4" id="about" ref={ref}>
+    <div className="scroll-mt-28 border-b border-neutral-900 pb-4" id="about" ref={ref}>
       {/* Section Title */}
       <motion.h2
         initial={{ opacity: 0 }}

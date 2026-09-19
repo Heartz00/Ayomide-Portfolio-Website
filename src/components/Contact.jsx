@@ -32,7 +32,7 @@ const Contact = () => {
   // Check if CONTACT exists and has required properties
   if (!CONTACT || !CONTACT.phoneNo || !CONTACT.email) {
     return (
-      <div className="border-b border-neutral-900 pb-20" id="contact" ref={ref}>
+      <div className="scroll-mt-28 border-b border-neutral-900 pb-20" id="contact" ref={ref}>
         <motion.h2
           initial={{ y: -30, opacity: 0 }}
           animate={inView ? { y: 0, opacity: 1 } : {}}
@@ -54,7 +54,7 @@ const Contact = () => {
   }
 
   return (
-    <div className="border-b border-neutral-900 pb-20" id="contact" ref={ref}>
+    <div className="scroll-mt-28 border-b border-neutral-900 pb-20" id="contact" ref={ref}>
       <motion.h2
         initial={{ y: -30, opacity: 0 }}
         animate={inView ? { y: 0, opacity: 1 } : {}}

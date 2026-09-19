@@ -1,15 +1,13 @@
-import React from "react";
 import { EXPERIENCES } from "../constants";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const Experience = () => {
   const [ref, inView] = useInView({
-    triggerOnce: false, // Changed to false to trigger every time
+    triggerOnce: false,
     threshold: 0.1,
   });
 
-  // Animation variants
   const headerVariants = {
     hidden: { y: -50, opacity: 0 },
     visible: {
@@ -19,17 +17,8 @@ const Experience = () => {
     },
   };
 
-  const yearVariants = {
-    hidden: { x: -100, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
-  const contentVariants = {
-    hidden: { x: 100, opacity: 0 },
+  const cardVariants = {
+    hidden: { x: 60, opacity: 0 },
     visible: {
       x: 0,
       opacity: 1,
@@ -38,8 +27,7 @@ const Experience = () => {
   };
 
   return (
-    <div className="border-b border-neutral-900 pb-4" ref={ref}>
-      {/* Header slides from top */}
+    <div className="scroll-mt-28 border-b border-neutral-900 pb-4" id="experience" ref={ref}>
       <motion.h2
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
@@ -49,25 +37,30 @@ const Experience = () => {
         Experience
       </motion.h2>
 
-      <div>
+      <div className="mx-auto max-w-3xl">
         {EXPERIENCES.map((experience, index) => (
-          <motion.div
-            key={index}
-            className="mb-8 flex flex-wrap lg:justify-center"
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            transition={{ staggerChildren: 0.2, delayChildren: index * 0.1 }}
-          >
-            {/* Year slides from left */}
-            <motion.div variants={yearVariants} className="w-full lg:w-1/4">
-              <p className="mb-2 text-sm text-neutral-400">{experience.year}</p>
-            </motion.div>
+          <div key={index} className="flex items-stretch gap-4 lg:gap-6">
+            <div className="hidden w-24 flex-shrink-0 pt-6 text-right lg:block">
+              <p className="text-sm text-neutral-400">{experience.year}</p>
+            </div>
 
-            {/* Content slides from right */}
+            <div className="flex flex-shrink-0 flex-col items-center">
+              <span className="mt-7 h-3 w-3 flex-shrink-0 rounded-full border-2 border-purple-500 bg-neutral-950" />
+              {index !== EXPERIENCES.length - 1 && (
+                <span className="w-px flex-1 bg-neutral-800" />
+              )}
+            </div>
+
             <motion.div
-              variants={contentVariants}
-              className="w-full max-w-xl lg:w-3/4"
+              variants={cardVariants}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              transition={{ delay: index * 0.1 }}
+              className="mb-10 flex-1 rounded-2xl border border-neutral-800 p-6"
             >
+              <p className="mb-2 text-sm text-neutral-400 lg:hidden">
+                {experience.year}
+              </p>
               <h6 className="mb-2 font-semibold">
                 {experience.role} -{" "}
                 <span className="text-sm text-purple-100">
@@ -75,21 +68,18 @@ const Experience = () => {
                 </span>
               </h6>
               <p className="mb-4 text-neutral-400">{experience.description}</p>
-              <div className="flex flex-wrap">
-                {experience.technologies.map((tech, index) => (
-                  <motion.span
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ delay: 0.5 + index * 0.1 }}
-                    className="mr-2 mt-1 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-800"
+              <div className="flex flex-wrap gap-2">
+                {experience.technologies.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-400"
                   >
                     {tech}
-                  </motion.span>
+                  </span>
                 ))}
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>
