@@ -3,8 +3,10 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Technologies from "./components/Technologies";
+import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
+import Publications from "./components/Publications";
 import Contact from "./components/Contact";
 
 const App = () => {
@@ -21,8 +23,10 @@ const App = () => {
         <Hero />
         <About />
         <Technologies />
+        <Skills />
         <Experience />
         <Projects />
+        <Publications />
         <Contact />
       </div>
     </div>

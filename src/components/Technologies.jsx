@@ -1,8 +1,14 @@
-import { RiReactjsLine } from "react-icons/ri";
-import { TbBrandNextjs } from "react-icons/tb";
-import { SiMongodb, SiPostgresql, SiPython, SiMysql } from "react-icons/si";
-import { DiRedis } from "react-icons/di";
-import { FaNodeJs } from "react-icons/fa";
+import {
+  SiMongodb,
+  SiPostgresql,
+  SiPython,
+  SiMysql,
+  SiDocker,
+  SiPytorch,
+  SiTensorflow,
+  SiSupabase,
+} from "react-icons/si";
+import { FaNodeJs, FaAws } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -13,14 +19,16 @@ const Technologies = () => {
   });
 
   const techIcons = [
-    { Icon: RiReactjsLine, color: "text-cyan-400" },
-    { Icon: TbBrandNextjs, color: "text-white" },
-    { Icon: SiMongodb, color: "text-green-500" },
-    { Icon: FaNodeJs, color: "text-green-400" },
-    { Icon: DiRedis, color: "text-red-500" },
-    { Icon: SiPostgresql, color: "text-blue-500" },
     { Icon: SiPython, color: "text-yellow-400" },
+    { Icon: SiPostgresql, color: "text-blue-500" },
+    { Icon: SiMongodb, color: "text-green-500" },
     { Icon: SiMysql, color: "text-blue-600" },
+    { Icon: SiSupabase, color: "text-emerald-400" },
+    { Icon: FaAws, color: "text-orange-400" },
+    { Icon: SiDocker, color: "text-cyan-400" },
+    { Icon: SiPytorch, color: "text-red-500" },
+    { Icon: SiTensorflow, color: "text-orange-500" },
+    { Icon: FaNodeJs, color: "text-green-400" },
   ];
 
   // Slide in from right animation
