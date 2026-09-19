@@ -34,7 +34,7 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-3xl tracking-tight text-transparent"
             >
-              Software Engineer - Backend Focus
+              Software  and Data Engineer
             </motion.span>
 
             <motion.p
